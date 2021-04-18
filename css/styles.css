@@ -221,8 +221,6 @@ img {
   color: var(--main-bg-color);
   font-weight: 700;
   line-height: 1.88;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.06em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   padding: 10px 32px;
@@ -399,8 +397,9 @@ img {
   width: 100%;
   height: 70px;
   background-color: rgba(47, 48, 58, 0.8);
-  text-align: center;
-  padding: 27px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .portfolio-main-text {
@@ -644,6 +643,70 @@ img {
   text-transform: uppercase;
   color: var(--main-bg-color);
 }
+/* Footer form */
+
+.footer-form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-form-button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.86;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.06em;
+  color: var(--main-bg-color);
+  background-color: var(--accent-text-color);
+  border: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  transition: color var(--animation), background-color var(--animation),
+    fill var(--animation);
+}
+
+.footer-form-button:hover .icon,
+.footer-form-button:focus .icon {
+  fill: currentColor;
+}
+
+.footer-form-button:hover,
+.footer-form-button:focus {
+  background-color: var(--auxiliary-bg-color);
+  color: var(--main-text-color);
+}
+
+.footer-form-button .icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--main-bg-color);
+  margin-left: 10px;
+}
+
+#user_email {
+  width: 358px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 15px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  color: var(--main-bg-color);
+}
+
+.form-footer::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
 
 /* PAGE 2 (PORTFOLIO) */
 
@@ -785,6 +848,13 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+  transition: border-color var(--animation);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  outline: none;
+  border-color: var(--accent-text-color);
 }
 
 .modal-close-button .icon {
@@ -795,5 +865,161 @@ img {
 
 .modal-close-button:hover .icon,
 .modal-close-button:focus .icon {
-  fill: rgb(243, 17, 17);
+  fill: var(--accent-text-color);
+}
+
+/* Modal form */
+
+.order-service-form {
+  padding: 40px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  position: relative;
+  margin-top: 4px;
+}
+
+.modal-form-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15px;
+  text-align: center;
+  color: var(--main-text-color);
+  margin-bottom: 12px;
+}
+
+.modal-form-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17px;
+  letter-spacing: 0.01em;
+  color: var(--auxiliary-text-color);
+}
+
+.form-group .icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  transition: fill var(--animation);
+}
+
+.form-field {
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 42px;
+  transition: border-color var(--animation);
+}
+
+.form-field:focus + .icon,
+.form-field:not(:placeholder-shown) + .icon {
+  fill: var(--accent-text-color);
+}
+
+.form-field:not(:placeholder-shown),
+.form-feedback:not(:placeholder-shown) {
+  border-color: var(--accent-text-color);
+}
+
+.form-feedback {
+  width: 100%;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  margin-top: 4px;
+  padding: 12px 16px 0;
+  transition: border-color var(--animation);
+}
+
+.form-feedback::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.form-field:focus,
+.form-feedback:focus {
+  outline: none;
+  border-color: var(--accent-text-color);
+}
+
+.submit-button {
+  background-color: var(--accent-text-color);
+  color: var(--main-bg-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 55px;
+  margin-top: 30px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  transition: color var(--animation), background-color var(--animation);
+  cursor: pointer;
+}
+
+.submit-button:focus,
+.submit-button:hover {
+  background-color: var(--auxiliary-bg-color);
+  color: var(--main-text-color);
+}
+
+/* Checkbox  */
+
+.check {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--auxiliary-text-color);
+}
+
+.modal-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7px;
+  text-decoration-line: underline;
+  color: var(--accent-text-color);
+  margin-left: 3px;
+}
+
+.check-input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.check-box {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  background-color: var(--main-bg-color);
+  border: 2px solid var(--main-text-color);
+  border-radius: 4px;
+  margin-right: 9px;
+  cursor: pointer;
+}
+
+.check-input:checked + .check-box {
+  background-color: var(--auxiliary-text-color);
+  background-image: url(../images/svg-icons/icons/on.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-origin: border-box;
+  border-color: var(--accent-text-color);
 }
