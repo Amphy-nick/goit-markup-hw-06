@@ -700,6 +700,13 @@ img {
   color: var(--main-bg-color);
 }
 
+.form-footer:-webkit-autofill,
+.form-footer:-webkit-autofill:hover,
+.form-footer:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--main-bg-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--main-bg-section-color) inset;
+}
+
 .form-footer::placeholder {
   font-weight: 400;
   font-size: 16px;
@@ -999,9 +1006,13 @@ img {
 
 .check-input {
   position: absolute;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .check-box {
@@ -1019,7 +1030,7 @@ img {
   background-color: var(--auxiliary-text-color);
   background-image: url(../images/svg-icons/icons/on.svg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-origin: border-box;
   border-color: var(--accent-text-color);
 }
